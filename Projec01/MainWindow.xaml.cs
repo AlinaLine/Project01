@@ -72,6 +72,49 @@ namespace Projec01
             {
                 textLabel.Text = Convert.ToString(System.Math.Pow(Convert.ToDouble(textLabel.Text), 2));
             }
+            else if (str == "cbrt")
+            {
+                textLabel.Text = Convert.ToString(System.Math.Cbrt(Convert.ToDouble(textLabel.Text)));
+            }
+            else if (str == "log")
+            {
+                textLabel.Text = Convert.ToString(System.Math.Log(Convert.ToDouble(textLabel.Text)));
+            }
+            else if (str == "Acos")
+            {
+                textLabel.Text = Convert.ToString(System.Math.Acos(Convert.ToDouble(textLabel.Text)));
+            }
+            else if (str == "Asin")
+            {
+                textLabel.Text = Convert.ToString(System.Math.Asin(Convert.ToDouble(textLabel.Text)));
+            }
+            else if (str == "PI")
+            {
+                textLabel.Text = (Math.PI * double.Parse(textLabel.Text)).ToString();
+            }
+            else if (str == "Exp")
+            {
+                textLabel.Text = Convert.ToString(System.Math.Exp(Convert.ToDouble(textLabel.Text)));
+            }
+            else if (str == "Tan")
+            {
+                textLabel.Text = Convert.ToString(System.Math.Tan(Convert.ToDouble(textLabel.Text)));
+            }
+            else if (str == "Atan")
+            {
+                textLabel.Text = Convert.ToString(System.Math.Atan(Convert.ToDouble(textLabel.Text)));
+            }
+            else if (str == "x^3")
+            {
+
+                textLabel.Text = textLabel.Text = Convert.ToString(System.Math.Pow(Convert.ToDouble(textLabel.Text), 3));
+            }
+            else if (str == "exp")
+            {
+
+                textLabel.Text = textLabel.Text = Convert.ToString(System.Math.Pow(Convert.ToDouble(textLabel.Text), 3));
+            }
+
             else if (str == "=") //если пользователь нажал =
             {
                 string value = new DataTable().Compute(textLabel.Text, null).ToString();
@@ -79,6 +122,25 @@ namespace Projec01
             }
             else //если пользователь просто жмет кнопки, вывод символов в текстовое поле
                 textLabel.Text += str;
+        }
+
+        private void Двоичная_Checked(object sender, RoutedEventArgs e)
+        {
+
+            int i = Convert.ToInt32(textBox1.Text);
+            textBox2.Text = Convert.ToString(i, 2);
+        }
+
+        private void RadioButton_Checked(object sender, RoutedEventArgs e)
+        {
+            int i = Convert.ToInt32(textBox1.Text);
+            textBox2.Text = Convert.ToString(i, 16);
+        }
+
+        private void RadioButton_Checked_1(object sender, RoutedEventArgs e)
+        {
+            int i = Convert.ToInt32(textBox1.Text);
+            textBox2.Text = Convert.ToString(i, 8);
         }
     }
 }
